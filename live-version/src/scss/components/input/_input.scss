@@ -1,0 +1,63 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.form-label {
+  color: $textPrimary;
+  @include font($secondaryFont, 14, medium, normal, 17.5);
+}
+
+.form-control,
+.form-select {
+  border-color: $gray-300;
+  color: $textPrimary;
+  @include font($secondaryFont, 15, normal, normal, 15);
+  padding: size(11.5) size(16);
+  @include transitionsall;
+
+  &:focus,
+  &:active {
+    box-shadow: none;
+    outline: none;
+    border-color: darken($gray-300, 20%);
+  }
+
+  &::placeholder {
+    color: $textPlaceholder;
+  }
+}
+
+.search-input {
+  min-width: size(400);
+}
+
+.mobile-search-wrapper {
+  position: relative;
+  @include w100;
+  overflow: hidden;
+  input {
+    @include w100;
+    @include border(solid,1,$gray-300);
+    @include radius(4);
+    padding: size(6) size(8);
+    font-size: 10px;
+
+    &::placeholder {
+      font-size: 10px;
+    }
+    
+  }
+  span {
+    position: absolute;
+    left: size(10);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .search-btn {
+    position: absolute;
+    border: none;
+    background: transparent;
+    right: 0;
+    width: 20px;
+  }
+
+}

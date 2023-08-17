@@ -1,0 +1,75 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.vlContact-form ,
+.vlReservation-form
+{
+    @include flex-column;
+    gap: size(16);
+    .input-wrapper {
+        input ,textarea{
+            @include wh100;
+            @include border(solid,1,$black);
+            padding: size(20);
+            @include radius(90);
+            @include transitionsall;
+            color: #222222;
+            @include font($cashDisplay400, 16, normal, normal, 35);
+            &:focus {
+                outline: none;
+                border-color: lighten($black,10%);
+                background: #f2e8dc;
+              }
+              &::placeholder {
+                 
+              }
+
+        }
+        textarea {
+            height: size(280);
+            @include radius(50);
+        }
+    }
+    .btn-submit {
+        border: none;
+        padding: size(20);
+        background: #222222;
+        @include radius(60);
+        color: $white;
+        @include font($cashDisplay600,20,semibold,normal,26);
+        @include border(solid,1,#222222);
+        @include transitionsall;
+       @include hover {
+        background: $white;
+        color: #222222;
+       }
+    }
+}
+ 
+.vlReservation-wrapper {
+    @include flex-column;
+    gap: size(40);
+    text-align: center;
+    padding: size(0) size(30);
+    @include breakpoint(tab992) {
+        text-align: left;
+    }
+    .vlReservation-box {
+        @include flex-column;
+        gap: size(18); 
+        @include breakpoint(mobile576) {
+            gap:size(30);
+        }
+
+    }
+    .vlReservation-heading {
+        @include font($cashDisplay500, 40, medium, normal, 40);
+        margin: 0;
+        color: $black;
+
+    }
+    .vlReservation-text {
+        @include font($cashDisplay400, 18, normal, normal, 35);
+        color: #222222;
+    }
+}

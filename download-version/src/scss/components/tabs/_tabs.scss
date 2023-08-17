@@ -1,0 +1,308 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+
+// Select the tab navigation links
+.nav-tabs {
+
+      
+
+    &.select-pizza-tab {
+      // Custom styles for the tab navigation
+      border: none;
+      font-size: 18px;
+      background-color: $cartBg;
+      padding: size(16);
+      @include radius(4);
+      @include flex;
+      gap: size(10);
+      @include breakpoint(mobile576) {
+        gap: size(20);
+      }
+      @include breakpoint(tab992) {
+        gap: size(36);
+    
+      }
+      // Select the active tab link
+        .nav-link {
+            border: none;
+            @include border-single(bottom,solid,3,transparent);
+            color: $gray-600;
+            @include font($primaryFont,14,normal,normal,20);
+        }
+      .nav-link.active {
+        color: $primary ;
+        background-color: transparent;
+        border-color: $primary;
+        padding: size(12) size(0);
+      
+      }
+      
+      // Select the disabled tab links
+      .nav-link.disabled {
+        opacity: 0.5;
+      } 
+
+  
+    }
+
+    &.order-tab {
+      @include flex-column;
+      gap: size(10);
+      border-bottom: 0;
+
+      .nav-link { 
+        padding: size(16);
+        @include flex-between;
+        @include border(solid,1,$gray-300);
+        @include radius(8);
+
+        .left {
+          @include flex-column;
+          align-items: flex-start;
+          gap: size(8);
+
+          .id {
+            color: $gray-900;
+            @include font($primaryFont,16,normal,normal,20);
+
+          }
+          .date {
+            color: $gray-600;
+            @include font($primaryFont,14,normal,normal,20);
+
+          }
+          
+        }
+        .right {
+          .price {
+            color: $gray-900;
+            @include font($primaryFont,20,normal,normal,24);
+
+          }
+        }
+      }
+
+      .nav-link.active {
+       border-color: $primary;
+      
+      }
+    } 
+
+    &.product {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      border-bottom: transparent;
+      gap: size(12);
+      .nav-link {
+        border: none;
+        color: #C9C9C9;
+        @include font($cashDisplay600,20,semibold,normal,24);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include breakpoint(mobile576) {
+          @include font($cashDisplay600,28,semibold,normal,30);
+        }
+    }
+      .nav-link.active {
+        color: $black ;
+        background-color: transparent;
+      
+      
+      }
+    }
+  }
+  
+
+
+  .tab-title {
+    color: $gray-900;
+    @include font($primaryFont,18,medium,normal,23);
+  }
+
+  .myorders {
+    @include border-single(left,solid,1,$gray-300); 
+    height: 100%;
+    &-header {
+      @include flex-between;
+      @include border-single(bottom,solid,1,$gray-300); 
+      padding: size(20) size(35);
+      color: $gray-900;
+
+      .status {
+        background: $success;
+        padding: size(4) size(8);
+        @include radius(4);
+        color: $white;
+
+     &.pending {
+      background :#FFC107;
+     }
+     &.approved {
+      background: #28A745;
+     }
+
+     &.ready {
+      background:#007BFF ;
+     }
+
+     &.delivered {
+      background: #343A40;
+     }
+
+     &.canceled {
+      background: #DC3545;
+     }
+     &.refunded {
+      background:#6C757D ;
+     }
+     &.returned {
+      background:  #FF5733;
+     }
+
+      }
+    }
+    &-body {
+      padding: size(20) size(35);
+      padding-right: size(10);
+      @include flex-column;
+      gap: size(40);
+    }
+
+    .single-order {
+      @include flex-column;
+      gap: size(20);
+      .order-info {
+        @include flex-between;
+        .left {
+          @include flex-column;
+          gap: size(5);
+        }
+
+        .right {
+
+        }
+        .title {
+          color: $gray-900;
+          @include font($primaryFont,16,normal,normal,20);
+
+        }
+        .des {
+          color: $gray-600;
+          @include font($primaryFont,12,normal,normal,14);
+
+
+        }
+        .quantity {
+          color: $lightred;
+          @include font($primaryFont,14,normal,normal,18);
+
+        }
+        .price {
+          color: $gray-900;
+          @include font($primaryFont,16,normal,normal,20);
+
+        }
+      }
+      .order-options {  
+        @include flex;
+        flex-wrap: wrap;
+        gap: size(8);
+      }
+      .option {
+        background: #FFF7F5;
+        @include radius(4);
+        padding: size(4) size(8);
+        @include font($primaryFont,14,normal,normal,18);
+        color: $gray-900;
+
+      }
+    }
+  }
+
+
+  // tab content 
+  .product-tab-content {
+    padding: size(10);
+    @include breakpoint(mobile576) {
+      padding: size(20);
+    }
+  }
+
+  .tabProductDetails-thumb {
+    position: relative;
+    @include radius(20);
+    // overflow: hidden;
+    transform: rotate(8.12deg);
+    overflow: hidden;
+    
+    img {
+      @include wh100;
+      object-fit: cover;
+      @include radius(20);
+      transition: filter 0.5s ease-in-out;
+      @include hover {
+        filter: grayscale(100%);
+      }
+    }
+    .topIcon {
+      position: absolute;
+      top: -30px;
+      z-index: 1;
+      right: -20px;
+    }
+    .bottomIcon {
+      position: absolute;
+      bottom: -20px;
+      left: -30px;
+      
+    }
+  }
+  .tabOrderCard {
+    @include border(solid,1,$black);
+    @include radius(20);
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.8);
+    width: 90%;
+    margin: auto;
+    top: -150px;
+    overflow: hidden;
+    @include transitionsall;
+    @include hover {
+      transform: scale(1.03);
+    }
+    
+    &-top {
+      padding: size(14);
+      @include breakpoint(mobile576) {
+        padding: size(30);
+      }
+      .title {
+        color: $black;
+        @include font($cashDisplay400,24,medium,normal,30);
+      }
+      .description {
+        color: #222222;;
+        @include font($ArchivoFont,18,normal,normal,20);
+        letter-spacing: 0.03em;
+        margin-top: size(20);
+      }
+
+    }
+    &-bottom {
+      background: $PrimaryLand;
+      padding: size(14) size(14);
+      @include flex-between;
+      padding: size(14);
+      @include breakpoint(mobile576) {
+        padding: size(14) size(30);
+      }
+      .price {
+        color: $black;
+        @include font($cashDisplay600,22,semibold,normal,27);
+      }
+    }
+  }

@@ -1,0 +1,47 @@
+// DEFAULT COLORS
+$bodybg: hsl(240, 23%, 97%); //#F7F7FA
+$white: hsl(0, 0%, 100%); //#ffffff
+$black: hsl(0, 0%, 0%); //#000000
+
+// THEME-COLORS
+$primary: hsl(41, 99%, 59%); //#FEBD2F
+$PrimaryLand :hsl(51, 100%, 50%) ; //#FFDA00
+$blue: hsl(214, 100%, 57%); //#2684FF
+$lightred: hsl(8, 97%, 66%); //#FC6B55
+$iconBg:hsl(32, 87%, 97%); //#FEF8F1
+$success :#34C06D; //#34C06D;
+
+
+
+// BACKGROUND-COLORS
+$bodybg: hsl(240, 20%, 98%); //#F9F9FB
+$cartBg :hsl(40, 23%, 95%); //#F5F3EF
+
+// TEXT-COLORS
+$textPrimary: hsl(210, 21%, 33%); //#425466
+
+$textPlaceholder: hsl(240, 6%, 73%); //#B5B5BD
+$cartText :hsl(240, 1%, 30%); //#4B4B4C
+
+$gray-50 :hsl(210, 20%, 98%); //#F9FAFB
+$gray-100:hsl(216, 24%, 96%); //#F2F4F7
+$gray-300: hsl(214, 32%, 91%); //#E2E8F0
+$gray-400: hsl(211, 25%, 84%); //#CBD5E0
+$gray-600: hsl(216, 15%, 52%); //#718096
+$gray-700: hsl(218, 17%, 35%); //#4A5568
+$gray-900: hsl(220, 26%, 14%); //#1A202C
+
+// BORDER-COLORS
+
+// SHADOWS
+$shade-1: rgba(102, 112, 133, 0.05);
+
+// BOX-SHADOWS
+$box-shadow-1: 0.25rem 0.25rem 0.25rem $shade-1;
+$dropshadow-1: drop-shadow(0.25rem 0.25rem 0.25rem $shade-1);
+
+// vendor landign colors 
+
+$vlFooterbg: hsl(0, 0%, 96%) ;  //#F4F4F4
+$vlHeaderbd:hsl(0, 0%, 88%) ; //#E0E0E0
+$headingText:hsl(0, 0%, 13%); //#222222

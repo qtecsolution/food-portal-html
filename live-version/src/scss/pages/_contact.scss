@@ -1,0 +1,85 @@
+@use "../global"as *;
+@use "../partials"as *;
+.vlOverlay-image {
+    position: relative;
+    @include w100;
+    height: size(250);
+
+    img {
+        display: block;
+        @include wh100;
+        object-fit: cover;
+    }
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        font-size: 36px;
+        @include font($cashDisplay600, 50, semibold, normal, 100);
+
+        @include breakpoint(mobile576) {
+            @include font($cashDisplay600, 70, semibold, normal, 110);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            leading-trim: both;
+            text-edge: cap;
+            text-align: center;
+            letter-spacing: 0.03em;
+
+        }
+
+        @include breakpoint(mobile768) {
+            @include font($cashDisplay600, 100, semibold, normal, 130);
+
+        }
+
+        @include breakpoint(tab992) {
+            @include font($cashDisplay600, 153, semibold, normal, 143);
+
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.5;
+    }
+
+    @include breakpoint(mobile576) {
+        height: size(416);
+    }
+
+}
+
+.vlContact ,
+.vlReservation
+
+ {
+  padding: size(50) size(0);
+  padding-bottom: size(100);
+  @include breakpoint(mobile576) {
+    padding: size(70) size(0);
+    padding-bottom: size(160);
+  }
+  &-title {
+    color: $black;
+    @include font($cashDisplay500, 36, medium, normal, 52);
+        leading-trim: both;
+        text-edge: cap;
+        letter-spacing: 0.03em;
+    @include breakpoint(mobile576) {
+    @include font($cashDisplay500, 42, medium, normal, 52);
+        
+    }
+  }
+}
+
+  

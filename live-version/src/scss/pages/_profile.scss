@@ -1,0 +1,131 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+
+
+.userinfo-card {
+    .icon {
+        @include square(70);
+        @include breakpoint(mobile576) {
+        @include square(100);
+        position: relative;
+        @include circle;
+        z-index: 99;
+
+        }
+       
+        .user-icon {
+            @include wh100;
+            display: inline-block;
+            position: relative;
+            @include circle;
+
+            .uplod-box {
+                
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) ;
+             
+                @include circle;
+                @include flex-center;
+                @include square(50);
+                opacity: 0;
+                visibility: hidden;
+                background:$gray-300;
+                z-index: 100;
+                @include transitionsall;
+                cursor: pointer;
+                
+                
+            }
+           
+
+            @include hover {
+             
+              .uplod-box { 
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+           
+            path {
+               
+            }
+        }
+     
+        img {
+            @include wh100;
+            @include circle;
+            object-fit: cover;
+        }
+    }
+}
+
+.profile-menu {
+    border: none;
+    
+    .list-group-item {
+        border: none;
+        background: transparent;
+        @include radius(10);
+        @include transitionsall;
+        @include hover {
+            background: $white;
+        }
+
+        &.active {
+            background: $white;
+
+        }
+        svg {
+            @include square(20);
+        }
+        
+        .text {
+            color: $gray-700;
+        }
+    }
+}
+
+
+.myaddress {
+
+}
+.addresslist {
+    @include list-vertical;
+    gap: size(12);
+
+    &-item {
+        @include flex;
+        align-items: center;
+        justify-content: space-between; 
+        @include border(solid,1,$gray-300);
+        padding: size(16);
+        @include radius(6);
+        
+
+        .left {
+            @include flex;
+            align-items: center;
+            gap: size(16);
+
+            .icon-wrapper {
+                @include square(36);
+                @include flex-center;
+                @include circle;
+            }
+
+            .title-address-wrapper {
+                @include flex-column;
+                gap: size(4);
+                .title {
+                    color: $gray-900;
+                    @include font($primaryFont,16,semibold,normal,26);
+                    color: $gray-900;
+                }
+            }
+        }
+
+    }
+}

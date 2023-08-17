@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+$primaryFont: "Outfit", sans-serif;
+$secondaryFont: "Lexend", sans-serif;
+$ArchivoFont: "Archivo", sans-serif;
+
+$cashDisplay300: "ClashDisplay-Light", sans-serif;
+$cashDisplay400: "ClashDisplay-Regular", sans-serif;
+$cashDisplay500: "ClashDisplay-Medium", sans-serif;
+$cashDisplay600: "ClashDisplay-Semibold", sans-serif;
+$cashDisplay700: "ClashDisplay-Bold", sans-serif;
+
+@font-face {
+  font-family: 'ClashDisplay-Light';
+  src: url('../../assets/fonts/WEB/fonts/ClashDisplay-Light.woff2') format('woff2'),
+       url('../../assets/fonts/WEB/fonts/ClashDisplay-Light.woff') format('woff'),
+       url('../../assets/fonts/WEB/fonts/ClashDisplay-Light.ttf') format('truetype');
+       font-weight: 300;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Regular';
+  src: url('../../assets/fonts/WEB/fonts/ClashDisplay-Regular.woff2') format('woff2'),
+       url('../../assets/fonts/WEB/fonts/ClashDisplay-Regular.woff') format('woff'),
+       url('../../assets/fonts/WEB/fonts/ClashDisplay-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Medium';
+  src: url('../../assets/fonts/WEB/fonts/ClashDisplay-Medium.woff2') format('woff2'),
+       url('../../assets/fonts/WEB/fonts/ClashDisplay-Medium.woff') format('woff'),
+       url('../../assets/fonts/WEB/fonts/ClashDisplay-Medium.ttf') format('truetype');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Semibold';
+  src: url('../../assets/fonts/WEB/fonts/ClashDisplay-Semibold.woff2') format('woff2'),
+       url('../../assets/fonts/WEB/fonts/ClashDisplay-Semibold.woff') format('woff'),
+       url('../../assets/fonts/WEB/fonts/ClashDisplay-Semibold.ttf') format('truetype');
+       font-weight: 600;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Bold';
+  src: url('../../assets/fonts/WEB/fonts/ClashDisplay-Bold.woff2') format('woff2'),
+       url('../../assets/fonts/WEB/fonts/ClashDisplay-Bold.woff') format('woff'),
+       url('../../assets/fonts/WEB/fonts/ClashDisplay-Bold.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+
+
+
+
+@font-face {
+  font-family: 'ClashDisplay-Bold';
+  src: url('../fonts/ClashDisplay-Bold.woff2') format('woff2'),
+       url('../fonts/ClashDisplay-Bold.woff') format('woff'),
+       url('../fonts/ClashDisplay-Bold.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
+
+// FONT SIZE PIXEL TO REM
+@function calculateRem($size, $base: 16) {
+  $remSize: calc($size / $base);
+  @return $remSize * 1rem;
+}
+
+// FONT STYLE FUNCTION
+@function style($keyword) {
+  $conversion-map: (
+    normal: normal,
+    italic: italic,
+    oblique: oblique,
+  );
+
+  @if not map-has-key($conversion-map, $keyword) {
+    @error "Unsupported `font-weight` keyword `#{$keyword}`";
+    @return null;
+  }
+
+  @return map-get($conversion-map, $keyword);
+}
+
+// FONT WEIGHT FUNCTION
+@function weight($keyword) {
+  $conversion-map: (
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+  );
+
+  @if not map-has-key($conversion-map, $keyword) {
+    @error "Unsupported `font-weight` keyword `#{$keyword}`";
+    @return null;
+  }
+
+  @return map-get($conversion-map, $keyword);
+}
+
+@mixin font($name, $size, $weight, $style, $lh) {
+  font: {
+    family: $name;
+    size: calculateRem($size);
+    weight: weight($weight);
+    style: style($style);
+  }
+  line-height: calc($lh / $size);
+}
