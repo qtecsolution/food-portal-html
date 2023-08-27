@@ -26,7 +26,7 @@
     </div>
     <!-- ================================== PRELOADER=============================================--> 
     <div data-scroll-container>
-    
+        <!-- FIXED RESERVATION BUTTON   -->
         <a href="reservation.html" class="reservation-btn">Reservation</a>
     
         <!-- =========================== HEADER START ==========================================-->
@@ -45,7 +45,7 @@
                     <nav class="vDeskmenu">
                         <ul>
                             <!-- <li> <a href="#">Menu</a></li> -->
-                            <li> <a href="index.html">Our Restaurant</a></li>
+                            <li> <a href="index.html" class="active">Our Restaurant</a></li>
                             <li> <a href="reservation.html">Reservation</a></li>
                             <li> <a href="about.html">About Us</a></li>
                             <li> <a href="contact.html">Contact</a></li>
@@ -1706,16 +1706,20 @@
     <script src="assets/js/preloader/preloader.js"></script>
 
     <script>
+        // Initialize Swiper for the review section
         const reviewSwiper = new Swiper('.reviewSwiper-container', {
             slidesPerView: 1,
             slidesPerGroup: 1,
             spaceBetween: 20,
             grabCursor: true,
 
+            // Add pagination for easy navigation through reviews
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
+
+            // Configure responsive breakpoints for different screen sizes
             breakpoints: {
                 640: {
                     slidesPerView: 2,
@@ -1735,6 +1739,7 @@
             },
         });
 
+        // Initialize Swiper for image fading with navigation buttons
         var swiper = new Swiper(".mySwiper", {
             speed: 700,
             effect: 'fade',
@@ -1743,13 +1748,14 @@
                 crossFade: false
             },
 
-
+            // Add navigation buttons for image slider
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
         });
 
+        // When the window loads, initialize LocomotiveScroll for smooth scrolling
         window.addEventListener("load", () => {
             const scroll = new LocomotiveScroll({
                 el: document.querySelector("[data-scroll-container]"),
@@ -1757,11 +1763,13 @@
                 multiplier: 0.75,
                 scrollFromAnywhere: true,
             });
+
+            // Update scroll after a delay to ensure proper initialization
+            setTimeout(() => {
+                scroll.update();
+            }, 5000);
         });
 
-        setTimeout(() => {
-            scroll.update();
-        }, 5000);
 
     </script>
 </body>

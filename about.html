@@ -185,7 +185,7 @@
         <!-- =========================== TIME SECTION START ==========================================-->
         <section class="vlTime" data-scroll-section>
             <div class="container">
-                <div class="vlContent" data-scroll data-scroll-speed="-1">
+                <div class="vlContent" data-scroll data-scroll-speed="1">
                     <figure class="vengor-logo">
                         <img src="assets/images/logo/logo.svg" alt="vendor logo ">
                     </figure>
@@ -336,6 +336,7 @@
     <!-- LOCOMOTIVE SCROLL MIN JS  -->
     <script src="assets/js/locomotive/locomotive-scroll.min.js"></script>
     <script>
+        // When the window loads, initialize LocomotiveScroll for smooth scrolling
         window.addEventListener("load", () => {
                 const scroll = new LocomotiveScroll({
                     el: document.querySelector("[data-scroll-container]"),
