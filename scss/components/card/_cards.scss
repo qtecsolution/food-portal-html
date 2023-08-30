@@ -283,17 +283,20 @@ html, body {
 
 .review-card {
     @include border(solid,1,$vlHeaderbd);
-    padding: size(80) size(20);
+    padding: size(80) size(50);
     @include flex-column;
     gap: size(20);
     @include radius(186);
     text-align: center;
-    margin: 0 size(14);
+    margin: 0 size(14); 
     @include breakpoint(tab992) {
         padding: size(40);
     }
     @include breakpoint(desktop1200) {
-        padding: size(80);
+        padding: size(80) size(20);
+    }
+    @include breakpoint(desktop1400) {
+        padding: size(80) size(50);
     }
 
     .rattings {
@@ -308,10 +311,15 @@ html, body {
          @include font($cashDisplay500, 18, medium, normal, 22);
     }
     .text {
-        @include font($ArchivoFont, 18, medium, normal, 20);
-        letter-spacing: 0.03em;
-        color: #222222;
-        @include line-clamp-4;
-        -webkit-line-clamp:10;
+        color: #222;
+        leading-trim: both;
+        text-edge: cap;
+        font-family: Archivo;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.54px;
+        line-height: 1.4;
     }
 }

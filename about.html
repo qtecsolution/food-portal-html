@@ -38,7 +38,6 @@
                     </div>
                     <nav class="vDeskmenu">
                         <ul>
-                            <!-- <li> <a href="#">Menu</a></li> -->
                             <li> <a href="index.html">Our Restaurant</a></li>
                             <li> <a href="reservation.html">Reservation</a></li>
                             <li> <a href="about.html" class="active">About Us</a></li>
@@ -159,7 +158,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-lg-3 text-white p-0" data-scroll data-scroll-speed="3"
+                    <div class="col-sm-6 col-lg-3 bg-danger text-white p-0" data-scroll data-scroll-speed="3"
                         data-scroll-delay="0.10">
                         <div class="card-followSocial">
                             <figure class="card-followSocial-img">
@@ -185,7 +184,8 @@
         <!-- =========================== TIME SECTION START ==========================================-->
         <section class="vlTime" data-scroll-section>
             <div class="container">
-                <div class="vlContent" data-scroll data-scroll-speed="1">
+                <div class="vlContent" data-scroll data-scroll-speed="1" data-scroll-class="appear"
+                data-scroll-repeat="true">
                     <figure class="vengor-logo">
                         <img src="assets/images/logo/logo.svg" alt="vendor logo ">
                     </figure>
@@ -292,7 +292,7 @@
         <div class="offcanvas offcanvas-start" tabindex="-1" id="vlMObileMEnu" aria-labelledby="vlMObileMEnu">
             <div class="offcanvas-header d-flex">
                 <a href="index.html" class="logo">
-                    <img src="assets/images/logo/logo.svg" alt="logo">
+                    <img src="assets/images/logo/logo.png" alt="logo">
                 </a>
 
                 <button type="button" class="btn-offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -336,7 +336,6 @@
     <!-- LOCOMOTIVE SCROLL MIN JS  -->
     <script src="assets/js/locomotive/locomotive-scroll.min.js"></script>
     <script>
-        // When the window loads, initialize LocomotiveScroll for smooth scrolling
         window.addEventListener("load", () => {
                 const scroll = new LocomotiveScroll({
                     el: document.querySelector("[data-scroll-container]"),

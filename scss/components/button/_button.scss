@@ -226,3 +226,32 @@ button,
       
   }
 }
+
+.review-btn-container {
+  padding-top: size(30);
+  @include flex-center;
+  @include breakpoint(mobile576) {
+    padding-top: size(60);
+  }
+  .review-btn {
+    color: #000;
+    @include font($cashDisplay600,20,semibold,normal,27);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    leading-trim: both;
+    text-edge: cap;
+    line-height: normal;
+    background: $primary;
+    @include radius(60);
+    padding: size(16) size(20);
+    @include transitionsall;
+    @include border(solid,2,transparent);
+    @include hover {
+      background: transparent;
+      border-color: $primary;
+      
+  }
+
+  }
+}

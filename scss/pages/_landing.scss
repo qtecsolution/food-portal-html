@@ -312,6 +312,32 @@ html.has-scroll-smooth {
             }
         }
     } 
+    .vlCallNow  {
+        padding: size(50) size(50);
+        @include breakpoint(tab992) {
+        padding: size(100) size(100);
+        padding-top: size(70);
+            
+        }
+        &-content {
+            @include flex-column;
+            gap: size(30);
+            align-items: center;
+            text-align: center;
+            .title {
+                color: $black;
+                text-align: center;
+                leading-trim: both;
+                text-edge: cap;
+                letter-spacing: 0.96px;
+                 @include font($cashDisplay500, 32, medium, normal, 40);
+
+            }
+            @include breakpoint(mobile576) {
+                gap: size(50);
+            }
+        }
+    }
 
     #marquee {
         padding: 50px 0px;
