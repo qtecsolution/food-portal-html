@@ -308,7 +308,7 @@ html, body {
     .name {
         color: $black;
         letter-spacing: 0.03em;
-         @include font($cashDisplay500, 18, medium, normal, 22);
+        @include font($cashDisplay500, 18, medium, normal, 22);
     }
     .text {
         color: #222;
@@ -321,5 +321,13 @@ html, body {
         line-height: normal;
         letter-spacing: 0.54px;
         line-height: 1.4;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 10; 
+        min-height: size(220);
+        @include breakpoint(desktop1400) {
+            font-size: 18px;
+        }
     }
 }
