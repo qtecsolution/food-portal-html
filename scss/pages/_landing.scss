@@ -577,3 +577,6 @@ html.has-scroll-smooth {
        // border-radius: 20% 25% 20% 24%;
        // padding: 10px 3px 3px 10px;
      }
+     .swiper-button-next svg, .swiper-button-prev svg {
+        width: auto !important;
+     }
